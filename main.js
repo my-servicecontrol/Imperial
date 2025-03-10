@@ -1,5 +1,5 @@
 var myApp =
-  "https://script.google.com/macros/s/AKfycbw2tB3saKBP00HeLgxnD6tEydulDniopFxWyj4rFZCIc6vkfxvfjzoxYmPlaJXGOePP/exec";
+  "https://script.google.com/macros/s/AKfycbwulJsZPKCBvDQ2iNFWcYhchJicFefptmtVzfvtKzyoe5Ck6PoT_At4mDoCR07QD4lt/exec";
 var tasks = "1yx6VKD-u-hW4CV4gQTQK5wQVQ9Ex6dDEgYsJgPaIqUY";
 var sName = "Imperial";
 //var eDate = "Активно до: 18.08.2024";
@@ -622,7 +622,7 @@ function addReportModal() {
   $("#commonReport .modal-body").html(function () {
     return `<label for="typeReport" class="form-label">Тип звіту</label>
 <select id="typeReport" name="typeReport" class="form-select" type="text" value="" onchange="addInputClient()" list="characterR">
-<option selected>За виконаними замовленнями</option><option>За проданими товарами</option><option>По клієнту</option></select>
+<option selected>За виконаними замовленнями</option><option>Фінансовий (основний)</option><option>За проданими товарами</option><option>По клієнту</option></select>
 <br><div id="addInput"></div><br>
 <div class="row"><div class="col">
 <label for="sdate" class="form-label">Дата початку</label>
@@ -654,6 +654,9 @@ function addReport() {
   action.length = 0;
   if (typeReport == "За виконаними замовленнями") {
     action.push("reportVal");
+  }
+  if (typeReport == "Фінансовий (основний)") {
+    action.push("reportFin");
   }
   if (typeReport == "За проданими товарами") {
     action.push("reportGoods");
