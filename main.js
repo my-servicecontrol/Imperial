@@ -1,5 +1,5 @@
 var myApp =
-  "https://script.google.com/macros/s/AKfycbwulJsZPKCBvDQ2iNFWcYhchJicFefptmtVzfvtKzyoe5Ck6PoT_At4mDoCR07QD4lt/exec";
+  "https://script.google.com/macros/s/AKfycbxJZNXBL1OAjiMx4S2RqMbX3M3ElGVLsU4HcYQyuPUsl332zwy1iNNlhsGrMOmKuo1P/exec";
 var tasks = "1yx6VKD-u-hW4CV4gQTQK5wQVQ9Ex6dDEgYsJgPaIqUY";
 var sName = "Imperial";
 //var eDate = "Активно до: 18.08.2024";
@@ -534,7 +534,7 @@ function editOrder(dadata) {
   });
 
   const data = dadata[36].v == undefined ? "немає замовлення" : dadata[36].v;
-  const rows = data.split(",");
+  const rows = data.split("--");
   const tableBody = document.getElementById("table-body");
 
   rows.forEach((row, index) => {
